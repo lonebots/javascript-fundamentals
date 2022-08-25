@@ -1,6 +1,6 @@
-//advanced reduce 
+//advanced reduce
 
-//cart example 
+//cart example
 const cart = [
   {
     title: "Samsung Galaxy",
@@ -29,16 +29,22 @@ const cart = [
   },
 ];
 
-
 //totalitems
 
-let total = cart.reduce((total,cartItem)=>{
+let total = cart.reduce(
+  (total, cartItem) => {
+    //get the price and amount
+    const { amount, price } = cartItem;
+    total.totalItem += amount;
+    total.cartTotal += amount * price;
     return total;
-},{
-    totalItem : 0,
-    cartTotal : 0,
-})
+  },
+  {
+    totalItem: 0,
+    cartTotal: 0,
+  }
+);
 
-console.log(total)
+console.log(total);
 
-//git up example 
+//git up example
