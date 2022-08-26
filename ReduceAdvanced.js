@@ -45,6 +45,43 @@ let total = cart.reduce(
   }
 );
 
-console.log(total);
+//console.log(total);
 
 //git up example
+const url = "https://api.github.com/users/lonebots/repos?per_page=100";
+
+//fetchapi
+const fetchRepos = async () => {
+  //wait for the response
+  const response = await fetch(url); //--> returns a promise
+  const data = await response.json(); //get the response and convert to json
+  //console.log(data[0].id);
+  //get the languages used
+  const newData = data.reduce((total, repo) => {
+    //console.log(repo);
+    //get language property from repo
+    const { language } = repo;
+    //console.log(language);
+
+    //get the count
+    // if (language) {
+    //   if (total[language]) {
+    //     total[language] = total[language] + 1;
+    //   } else {
+    //     total[language] = 1;
+    //   }
+    // }
+
+    //one - liner code
+    if (language) {
+      total[language] = total[language] + 1 || 1;
+    }
+    //console.log(total);\
+    
+
+    return total;
+  }, {});
+  console.log(newData);
+};
+
+fetchRepos();
