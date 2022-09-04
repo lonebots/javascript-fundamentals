@@ -1,4 +1,4 @@
-//optional chaining
+//optional chaining -chain when needed
 
 const people = [
   {
