@@ -16,17 +16,35 @@ const staff = [
 
 //calculate the daily salary
 const dailyTotal = staff.reduce((total, person) => {
-    console.log(total);
-    console.log(person.salary);
+  // console.log(total);
+  // console.log(person.salary);
 
-    //update total
-    total += person.salary;
-    //always return first parameter
-    return total;
+  //update total
+  total += person.salary;
+  //always return first parameter
+  return total;
 }, 0);
 
-console.log(dailyTotal);
+console.log("daily total : " + dailyTotal);
 
+// example 2 
 
+// reduce can be used to create tally of items from a list 
 
+const fruitBasket = ['apple', 'apple', 'apple', 'apple', 'apple', 'orange', 'orange', 'banana', 'banana', 'banana', 'banana', 'banana', 'mango'];
 
+const fruitCount = fruitBasket.reduce((tally, fruit) => {
+  tally[fruit] = (tally[fruit] || 0) + 1;
+  return tally;
+}, {});
+
+const count = fruitBasket.reduce((tally, fruit) => {
+  tally[fruit] = (tally[fruit] || 0) + 1;
+  return tally;
+}, {})
+
+for (const fruit in fruitCount) {
+  console.log(`${fruit}: ${fruitCount[fruit]}`);
+}
+console.log("fruits : " + count)
+console.log('fruit basket : ', fruitBasket)
