@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color picker</title>
+
+    </head>
+
+    <body>
+        <div>
+            <h2> color picker </h2>
+            <input type="color" id="color-pallate" oninput="logColor()" autocomplete="off" />
+        </div>
+        <div class="container">
+            <h2> adder</h2>
+            <label for="num1">num1</label>
+            <input type="number" id="num1" autocomplete="off" />
+
+            <label for="num2">num2</label>
+            <input type="number" id="num2" autocomplete="off" />
+            <button onclick="addNumbers()">add numbers</button>
+            <br>
+            <span>result : </span>
+            <div id="result"></div>
+        </div>
+
+        <div class="container">
+            <h2>greeting machine </h2>
+            <p>Enter your name : </p>
+            <input type="text" id="name" value="name here" autocomplete="off" />
+            <div id="greet"></div>
+        </div>
+
+        <div class="button-opt">
+            <button oncclick="greet()" class="button_clickable" id="btn">Click Me</button>
+        </div>
+        <!-- script has to be added at the end of the page, else it may not be able to select item with querySelector function(). -->
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+
+</html>
